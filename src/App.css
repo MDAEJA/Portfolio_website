@@ -1,0 +1,8 @@
+/* Ensures smooth rotation for 3D effect */
+.group:hover .front {
+  transform: rotateY(180deg);
+}
+
+.group:hover .back {
+  transform: rotateY(0);
+}
