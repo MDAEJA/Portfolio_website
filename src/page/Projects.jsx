@@ -210,9 +210,11 @@ function Projects() {
     <>
       <Header />
       <div className="bg-gradient-to-b from-gray-900 via-gray-800 to-black py-10 min-h-screen">
-        <div className="container mx-auto px-4">
+      
+
+        <div className="container mx-auto px-4 overflow-hidden">
            <motion.p
-              className="text-rose-400 dark:text-rose-600 text-center whitespace-nowrap text-base sm:text-lg md:text-xl p-10"
+              className="text-rose-400 w-screen dark:text-rose-600 text-center whitespace-nowrap text-base sm:text-lg md:text-xl p-2 my-5"
               animate={{ x: ["100%", "-100%"] }} // Moves text from right to left
               transition={{
                 repeat: Infinity, // Infinite loop
@@ -222,15 +224,6 @@ function Projects() {
             >
               "Welcome to My Portfolio! Explore my SocialPidia App, Netflix Clone, and Hospital Management System projects. Let's collaborate and create impactful solutions together!"
             </motion.p>
-          {/* <motion.h3
-            className="text-4xl md:text-5xl p-8 font-extrabold text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-blue-500 to-indigo-600"
-            initial={{ opacity: 0, y: -30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          >
-            My Projects
-          </motion.h3> */}
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {htmlProjects.map((project, index) => (
               <motion.div

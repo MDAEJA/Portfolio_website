@@ -62,10 +62,10 @@ function Hero() {
       </div>
 
       <motion.div
-  className="absolute bottom-4 w-full bg-gray-800 dark:bg-gray-900 overflow-hidden px-4 md:px-0"
+  className="absolute bottom-4 w-screen bg-gray-800 dark:bg-gray-900 overflow-hidden px-4"
 >
   <motion.p
-    className="text-rose-400 dark:text-rose-600 text-center whitespace-nowrap text-base sm:text-lg md:text-xl p-3"
+    className="text-rose-400 dark:text-rose-600 text-center whitespace-nowrap text-sm sm:text-base md:text-lg lg:text-xl p-2 sm:p-3"
     animate={{ x: ["100%", "-100%"] }} // Moves text from right to left
     transition={{
       repeat: Infinity, // Infinite loop
@@ -76,6 +76,7 @@ function Hero() {
     Welcome to My Portfolio! Explore projects, skills, and more. Let's collaborate to create something amazing!
   </motion.p>
 </motion.div>
+
 
 
 

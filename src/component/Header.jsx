@@ -14,7 +14,7 @@ function Header() {
         }
       }, []);
 
-      const[menu,setMenu] = useState(false);
+      const[menu,setMenu] = useState(true);
 
       const toggleDarkMode = () => {
         setIsDarkMode(!isDarkMode);
