@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import confetti from "canvas-confetti";
 
 function Projects() {
   const htmlProjects = [
@@ -206,6 +207,31 @@ function Projects() {
   
   ];
 
+  useEffect(() => {
+      const duration = 5 * 1000; // 5 seconds
+      const animationEnd = Date.now() + duration;
+  
+      const firework = () => {
+        const particleCount = 50;
+        confetti({
+          particleCount,
+          startVelocity: 30,
+          spread: 360,
+          ticks: 60,
+          origin: {
+            x: Math.random(),
+            y: Math.random() - 0.2, // Slightly above the viewport
+          },
+        });
+  
+        if (Date.now() < animationEnd) {
+          requestAnimationFrame(firework);
+        }
+      };
+  
+      firework();
+    }, []);
+
   return (
     <>
       <Header />
@@ -228,7 +254,7 @@ function Projects() {
             {htmlProjects.map((project, index) => (
               <motion.div
                 key={index}
-                className="bg-gradient-to-r from-blue-400 to-purple-600 dark:from-gray-800 dark:to-gray-900 text-white shadow-md rounded-lg overflow-hidden transform hover:scale-105 transition-all duration-300"
+                className="bg-gradient-to-r from-blue-400 to-rose-500 dark:from-gray-800 dark:to-gray-900 text-white shadow-md rounded-lg overflow-hidden transform hover:scale-105 transition-all duration-300"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}

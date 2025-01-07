@@ -4,6 +4,7 @@ import Footer from '../component/Footer';
 import { motion } from 'framer-motion';
 import { Typewriter } from 'react-simple-typewriter';
 import { Link } from 'react-router-dom';
+import confetti from 'canvas-confetti';
 
 function About() {
   // Manage the theme state
@@ -13,6 +14,31 @@ function About() {
   const toggleTheme = () => {
     setDarkMode(!darkMode);
   };
+
+  useEffect(() => {
+      const duration = 5 * 1000; // 5 seconds
+      const animationEnd = Date.now() + duration;
+  
+      const firework = () => {
+        const particleCount = 50;
+        confetti({
+          particleCount,
+          startVelocity: 30,
+          spread: 360,
+          ticks: 60,
+          origin: {
+            x: Math.random(),
+            y: Math.random() - 0.2, // Slightly above the viewport
+          },
+        });
+  
+        if (Date.now() < animationEnd) {
+          requestAnimationFrame(firework);
+        }
+      };
+  
+      firework();
+    }, []);
 
   // Store theme preference in localStorage
   useEffect(() => {

@@ -134,7 +134,7 @@ function Contact() {
           >
             {/* <p className="text-lg">We will get back to you as soon as possible!</p> */}
              <motion.p
-                className="text-rose-400 dark:text-rose-600 text-center whitespace-nowrap text-base sm:text-lg md:text-xl p-3"
+                className="w-screen text-rose-400 dark:text-rose-600 text-center whitespace-nowrap text-base sm:text-lg md:text-xl p-3"
                 animate={{ x: ["100%", "-100%"] }} // Moves text from right to left
                 transition={{
                   repeat: Infinity, // Infinite loop
